@@ -27,14 +27,16 @@ const PORT = process.env.PORT || 5000
 //socket conn on production
 
 
-  // const io = new Server(server, {
-  //   cors: {
-  //     origin: process.env.CORS_ALLOWED,
-  //     methods: ["GET", "POST"]
-  //   }
-  // })
+//in development
+  const io = new Server(server, {
+    cors: {
+      origin: process.env.CORS_ALLOWED,
+      methods: ["GET", "POST"]
+    }
+  })
 
-  const io = new Server(server)
+  //in production
+  // const io = new Server(server)
 
 
 
